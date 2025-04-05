@@ -1,24 +1,51 @@
-# README
+# 🛠️ Homey Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Ruby on Rails application that tracks **project conversation history**, including:
 
-Things you may want to cover:
+- 📝 Comments
+- 🔄 Project status changes
 
-* Ruby version
+All project data is created using seed data — there's no UI for creating projects.
 
-* System dependencies
+---
 
-* Configuration
+## 🚀 Tech Stack
 
-* Database creation
+- **Ruby**: `3.2.2`
+- **Rails**: `7.1.5.1`
+- **Database**: PostgreSQL
+- **Frontend**: ERB + Hotwire (Turbo + Stimulus ready)
+- **Deployment**: AWS Elastic Beanstalk (or any cloud platform) -- Pending
 
-* Database initialization
+---
 
-* How to run the test suite
+## 📦 Setup Instructions
 
-* Services (job queues, cache servers, search engines, etc.)
+### 1. Clone the Repo
 
-* Deployment instructions
+```bash
+git clone https://github.com/your-username/homey_application.git
+cd homey_application
 
-* ...
+
+### 1. Clone the Repo
+
+
+```bash
+bundle install
+
+
+### 3. Database Setup
+
+```bash
+rails db:create db:migrate db:seed
+
+
+### 4. Open Browser
+  http://localhost:3000/projects/1
+
+🗨️ Leave Comments: Users can add conversation comments to projects.
+
+🚦 Change Status: Users can update the status of a project.
+
+📜 Conversation History: Each project shows a full log of comments and status changes.
