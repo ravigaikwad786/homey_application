@@ -1,0 +1,30 @@
+<h1><%= @project.name %></h1>
+<p class="status"><strong>Status:</strong> <%= @project.status %></p>
+
+<h2>Conversation History</h2>
+<ul class="conversation-history">
+  <% @conversation_entries.each do |entry| %>
+    <li>
+      <strong><%= entry.user.name %></strong>
+      <% if entry.comment? %>
+        commented: "<%= entry.content %>"
+      <% else %>
+        changed status to: "<%= entry.content %>"
+      <% end %>
+      <small><%= entry.created_at.strftime("%Y-%m-%d %H:%M") %></small>
+    </li>
+  <% end %>
+</ul>
+
+<h2>New Entry</h2>
+<%= form_with model: [@project, @new_entry], local: true do |f| %>
+  <p>
+    <%= f.label :entry_type %><br>
+    <%= f.select :entry_type, ConversationEntry.entry_types.keys.map { |t| [t.humanize, t] } %>
+  </p>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </p>
+  <%= f.submit "Add Entry" %>
+<% end %>
