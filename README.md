@@ -15,7 +15,7 @@ All project data is created using seed data — there's no UI for creating proje
 - **Rails**: `7.1.5.1`
 - **Database**: PostgreSQL
 - **Frontend**: ERB + Hotwire (Turbo + Stimulus ready)
-- **Deployment**: AWS Elastic Beanstalk (or any cloud platform) -- Pending
+- **Deployment**: http://13.126.14.103:3000/projects/1
 
 ---
 
